@@ -1,4 +1,4 @@
-package com.example.mad_project.data
+package com.example.energyapp.data
 
 data class Question(
     val text: String,

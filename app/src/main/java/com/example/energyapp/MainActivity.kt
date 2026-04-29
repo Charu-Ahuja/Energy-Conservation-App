@@ -50,10 +50,10 @@ fun EnergyApp(){
 fun BottomNavigationBar(navController: NavController) {
     val items = listOf(
         Screen.Dashboard,
+        Screen.Calculator,
         Screen.Tips,
-        Screen.Stats,
-        Screen.Settings,
-        Screen.Profile
+        Screen.Impact,
+        Screen.Quiz
     )
     NavigationBar {
         val navBackStackEntry = navController.currentBackStackEntryAsState()

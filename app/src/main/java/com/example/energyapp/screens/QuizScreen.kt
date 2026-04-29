@@ -1,4 +1,4 @@
-package com.example.mad_project.screens
+package com.example.energyapp.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable

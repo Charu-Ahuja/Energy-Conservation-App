@@ -29,22 +29,22 @@ fun NavGraph(
 
         // 💡 Energy Tips
         composable(Screen.Tips.route) {
-            TipsScreen()
+            CalculatorScreen()
         }
 
         // 📊 Stats / Usage Tracking
         composable(Screen.Stats.route) {
-            StatsScreen()
+            TipsScreen()
         }
 
         // ⚙️ Settings
         composable(Screen.Settings.route) {
-            SettingsScreen()
+            QuizScreen()
         }
 
         // 👤 Profile
         composable(Screen.Profile.route) {
-            ProfileScreen()
+            ImpactScreen()
         }
     }
 }
