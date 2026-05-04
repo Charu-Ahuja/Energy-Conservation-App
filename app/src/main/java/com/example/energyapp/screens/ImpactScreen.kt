@@ -1,4 +1,4 @@
-package com.example.energyconservationapp.screens
+package com.example.energyapp.screens
 
 import android.content.Context
 import android.content.Intent
@@ -16,14 +16,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.energyconservationapp.data.AboutData
+import com.example.energyapp.data.AboutData
 
 @Composable
 fun ImpactScreen() {
     val context = LocalContext.current
-    
+
     // Pledge Counter State
-    var pledgeCount by remember { mutableStateOf(342) } 
+    var pledgeCount by remember { mutableStateOf(342) }
     var hasPledged by remember { mutableStateOf(false) }
 
     LazyColumn(
@@ -47,14 +47,14 @@ fun ImpactScreen() {
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)
             ) {
                 Column(
-                    horizontalAlignment = Alignment.CenterHorizontally, 
+                    horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(24.dp)
                 ) {
                     Text(
-                        text = "📈 +47%", 
-                        fontSize = 48.sp, 
+                        text = "📈 +47%",
+                        fontSize = 48.sp,
                         fontWeight = FontWeight.ExtraBold,
                         color = MaterialTheme.colorScheme.onErrorContainer
                     )
@@ -82,14 +82,14 @@ fun ImpactScreen() {
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
             Text("🌱 Sustainability Pledge", fontSize = 20.sp, fontWeight = FontWeight.Bold)
             Text(
-                "Join our university in pledging to reduce daily energy consumption by at least 10%. Every action counts!", 
+                "Join our university in pledging to reduce daily energy consumption by at least 10%. Every action counts!",
                 modifier = Modifier.padding(vertical = 8.dp),
                 fontSize = 14.sp
             )
 
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Button(
-                    onClick = { 
+                    onClick = {
                         if (!hasPledged) {
                             pledgeCount++
                             hasPledged = true
@@ -137,15 +137,15 @@ fun ImpactScreen() {
                     Text(text = AboutData.appVersion, color = Color.Gray, fontSize = 14.sp)
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = AboutData.appDescription, 
-                        fontSize = 14.sp, 
+                        text = AboutData.appDescription,
+                        fontSize = 14.sp,
                         lineHeight = 20.sp
                     )
                 }
             }
         }
-        
-        item { 
+
+        item {
             Spacer(modifier = Modifier.height(24.dp)) // Bottom padding for navigation bar clearance
         }
     }
