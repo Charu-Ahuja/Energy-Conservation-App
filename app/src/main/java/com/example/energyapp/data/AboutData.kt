@@ -1,4 +1,4 @@
-package com.example.energyconservationapp.data
+package com.example.energyapp.data
 
 object AboutData {
     // App Information
