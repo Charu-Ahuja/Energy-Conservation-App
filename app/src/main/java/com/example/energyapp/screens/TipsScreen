@@ -1,5 +1,6 @@
 package com.example.energyapp.screens
 
+import androidx.navigation.NavController
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
@@ -70,7 +71,7 @@ private fun categoryColors(cat: TipCategory): Triple<Color, Color, Color> = when
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TipsScreen() {
+fun TipsScreen(navController: NavController) {
     var searchQuery       by remember { mutableStateOf("") }
     var selectedCategory  by remember { mutableStateOf(TipCategory.ALL) }
     val expandedTipIds    = remember { mutableStateListOf<Int>() }
@@ -171,6 +172,30 @@ fun TipsScreen() {
                         }
                     )
                 }
+            }
+
+            // ── Navigation Section ──────────────────────
+            item {
+                Text(
+                    text = "Explore More",
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Spacer(modifier = Modifier.height(15.dp))
+                NavigationButton("🏠 Dashboard") {
+                    navController.navigate("dashboard")
+                }
+                NavigationButton("🧮 Calculator") {
+                    navController.navigate("calculator")
+                }
+                NavigationButton("🟢 Green Quiz") {
+                    navController.navigate("quiz")
+                }
+                NavigationButton("🌍 Impact & About Us") {
+                    navController.navigate("impact")
+                }
+                Spacer(modifier = Modifier.height(30.dp))
             }
 
             // Bottom padding so the last card isn't hidden by nav bar
@@ -498,6 +523,32 @@ private fun EmptyState(query: String) {
             text = "Try a different search term or category",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
+}
+
+// ─────────────────────────────────────────────
+//  Navigation Button
+// ─────────────────────────────────────────────
+
+@Composable
+fun NavigationButton(
+    text: String,
+    onClick: () -> Unit
+) {
+    Button(
+        onClick = onClick,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 5.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.secondary
+        )
+    ) {
+        Text(
+            text = text,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Medium
         )
     }
 }
