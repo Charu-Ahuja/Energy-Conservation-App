@@ -9,11 +9,11 @@ data class TeamMember(
 object AboutData {
     // Automatically mapped from your team's work division
     val teamMembers = listOf(
-        TeamMember("Medha", "Roll No: 01", "Dashboard, Navigation & Final Integration"),
-        TeamMember("Kunjal", "Roll No: 02", "Energy Consumption Calculator"),
-        TeamMember("Ayushna", "Roll No: 03", "Energy Conservation Tips Hub"),
-        TeamMember("Charu", "Roll No: 04", "Green Quiz & Badge System"),
-        TeamMember("Lovedeep", "Roll No: 05", "Impact Page, About Us & Share Feature")
+        TeamMember("Medha Mohiley", "Roll No: 01", "Dashboard, Navigation & Final Integration"),
+        TeamMember("Kunjal Garg", "Roll No: 02", "Energy Consumption Calculator"),
+        TeamMember("Ayushna Bora", "Roll No: 03", "Energy Conservation Tips Hub"),
+        TeamMember("Charu Ahuja", "Roll No: 04", "Green Quiz & Badge System"),
+        TeamMember("Lovedeep Singh", "Roll No: 05", "Impact Page, About Us & Share Feature")
     )
 
     // Environmental impact statistics
