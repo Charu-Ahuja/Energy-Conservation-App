@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.*
@@ -39,7 +38,7 @@ fun ImpactScreen() {
             Spacer(modifier = Modifier.height(8.dp))
         }
 
-        // --- NEW TEXT-ONLY STAT CARD ---
+        // TEXT-ONLY STAT CARD
         item {
             Card(
                 modifier = Modifier
@@ -70,7 +69,6 @@ fun ImpactScreen() {
                 }
             }
         }
-        // --- END OF NEW STAT CARD ---
 
         item {
             Text("Did you know?", fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
@@ -120,13 +118,13 @@ fun ImpactScreen() {
             }
         }
 
-        // 4. Team Member Profiles
+        // 4. About the App (REPLACED "ABOUT US")
         item {
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text("👥 Meet the Team", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+            Text("📱 About the App", fontSize = 20.sp, fontWeight = FontWeight.Bold)
         }
 
-        items(AboutData.teamMembers) { member ->
+        item {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -135,13 +133,13 @@ fun ImpactScreen() {
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(text = member.name, fontWeight = FontWeight.Bold, fontSize = 16.sp)
-                    Text(text = member.rollNo, color = Color.Gray, fontSize = 14.sp)
+                    Text(text = AboutData.appName, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary)
+                    Text(text = AboutData.appVersion, color = Color.Gray, fontSize = 14.sp)
+                    Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = "Role: ${member.contribution}", 
+                        text = AboutData.appDescription, 
                         fontSize = 14.sp, 
-                        modifier = Modifier.padding(top = 4.dp),
-                        color = MaterialTheme.colorScheme.secondary
+                        lineHeight = 20.sp
                     )
                 }
             }
