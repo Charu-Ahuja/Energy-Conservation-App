@@ -66,7 +66,7 @@ fun DashboardScreen() {
 
                 // App Logo (Replace with your logo)
                 Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                    painter = painterResource(id = R.drawable.logo),
                     contentDescription = "App Logo",
                     modifier = Modifier.size(60.dp)
                 )

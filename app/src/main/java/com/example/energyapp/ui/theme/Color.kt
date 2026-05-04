@@ -16,3 +16,4 @@ val EcoBackground = Color(0xFFF1F8E9)
 val EnergyYellow = Color(0xFFFFC107)
 val DarkGreenText = Color(0xFF1B5E20)
 val White = Color(0xFFFFFFFF)
+

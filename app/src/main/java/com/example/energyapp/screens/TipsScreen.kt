@@ -250,7 +250,6 @@ private fun TipOfTheWeekCard(tip: EnergyTip) {
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = bg),
-        border = CardDefaults.outlinedCardBorder().copy(width = 1.dp),    // fallback
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Box(
@@ -373,7 +372,7 @@ fun TipCard(
     val titleColor = if (isExpanded) textColor else MaterialTheme.colorScheme.onSurface
 
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().clickable(onClick = onToggle),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = bg),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)

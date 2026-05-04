@@ -32,14 +32,14 @@ fun QuizScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(EcoBackground) // Use the theme's background
+            .background(MaterialTheme.colorScheme.background)
             .padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = "Green Quiz",
             style = MaterialTheme.typography.headlineMedium,
-            color = PrimaryGreen,
+            color = MaterialTheme.colorScheme.primary,
             fontWeight = FontWeight.Bold
         )
 
@@ -50,7 +50,7 @@ fun QuizScreen() {
             LinearProgressIndicator(
                 progress = { (currentQuestionIndex + 1).toFloat() / questions.size },
                 modifier = Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(10.dp)),
-                color = SecondaryGreen,
+                color = MaterialTheme.colorScheme.secondary,
                 trackColor = Color.LightGray
             )
 
@@ -67,7 +67,7 @@ fun QuizScreen() {
                     Text(
                         text = currentQuestion.text,
                         style = MaterialTheme.typography.titleLarge,
-                        color = DarkGreenText
+                        color = MaterialTheme.colorScheme.onBackground
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))
@@ -80,14 +80,14 @@ fun QuizScreen() {
                                 .fillMaxWidth()
                                 .padding(vertical = 6.dp)
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(if (isSelected) PrimaryGreen else Color.Transparent)
-                                .border(1.dp, if (isSelected) PrimaryGreen else SecondaryGreen, RoundedCornerShape(12.dp))
+                                .background(if (isSelected) MaterialTheme.colorScheme.primary else Color.Transparent)
+                                .border(1.dp, if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary, RoundedCornerShape(12.dp))
                                 .clickable { if (!showExplanation) selectedOption = index }
                                 .padding(16.dp)
                         ) {
                             Text(
                                 text = option,
-                                color = if (isSelected) Color.White else DarkGreenText
+                                color = if (isSelected) Color.White else MaterialTheme.colorScheme.onBackground
                             )
                         }
                     }
@@ -98,13 +98,13 @@ fun QuizScreen() {
                 Spacer(modifier = Modifier.height(16.dp))
                 Card(
                     modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(containerColor = EnergyYellow.copy(alpha = 0.2f)),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.2f)),
                     shape = RoundedCornerShape(16.dp)
                 ) {
                     Text(
                         text = "💡 ${currentQuestion.explanation}",
                         modifier = Modifier.padding(16.dp),
-                        color = DarkGreenText,
+                        color = MaterialTheme.colorScheme.onBackground,
                         fontSize = 14.sp
                     )
                 }
@@ -131,7 +131,7 @@ fun QuizScreen() {
                 enabled = selectedOption != null,
                 modifier = Modifier.fillMaxWidth().height(56.dp),
                 shape = RoundedCornerShape(16.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen)
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
             ) {
                 Text(if (!showExplanation) "CHECK ANSWER" else "NEXT")
             }
@@ -142,12 +142,12 @@ fun QuizScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Text(QuizData.getBadge(score), fontSize = 32.sp, color = PrimaryGreen, fontWeight = FontWeight.Bold)
-                Text("Final Score: $score / ${questions.size}", color = DarkGreenText)
+                Text(QuizData.getBadge(score), fontSize = 32.sp, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
+                Text("Final Score: $score / ${questions.size}", color = MaterialTheme.colorScheme.onBackground)
                 Spacer(modifier = Modifier.height(30.dp))
                 Button(onClick = {
                     isQuizFinished = false; score = 0; currentQuestionIndex = 0; selectedOption = null; showExplanation = false
-                }, colors = ButtonDefaults.buttonColors(containerColor = SecondaryGreen)) {
+                }, colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
                     Text("Restart Quiz")
                 }
             }

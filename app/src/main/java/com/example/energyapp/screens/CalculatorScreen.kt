@@ -20,6 +20,7 @@ import androidx.navigation.NavController
 import com.example.energyapp.R
 import kotlin.math.roundToInt
 
+
 @Composable
 fun CalculatorScreen(navController: NavController) {
 
@@ -33,6 +34,8 @@ fun CalculatorScreen(navController: NavController) {
     var savingsSuggestion by remember { mutableStateOf("") }
     var ecoScore by remember { mutableStateOf(100) }
     var progressValue by remember { mutableStateOf(1f) }
+    var dailyCost by remember { mutableStateOf(0.0) }
+    var usageFeedback by remember { mutableStateOf("") }
 
     val electricityRate = 8.0   // ₹ per kWh
     val carbonFactor = 0.82     // kg CO₂ per kWh
@@ -49,7 +52,7 @@ fun CalculatorScreen(navController: NavController) {
 
         //  APP LOGO
         Image(
-            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = "App Logo",
             modifier = Modifier
                 .size(120.dp)
@@ -106,6 +109,13 @@ fun CalculatorScreen(navController: NavController) {
                 monthlyKwh = dailyKwh * 30
                 monthlyCost = monthlyKwh * electricityRate
                 carbonEmission = monthlyKwh * carbonFactor
+                dailyCost = dailyKwh * electricityRate
+
+                usageFeedback = when {
+                    dailyKwh < 1 -> "Excellent usage 🌱"
+                    dailyKwh < 5 -> "Moderate usage ⚡ Try reducing"
+                    else -> "High usage ⚠️ Save energy"
+                }
 
                 savingsSuggestion =
                     if (hours > 2) {
@@ -177,6 +187,7 @@ fun CalculatorScreen(navController: NavController) {
                 Text("Daily Energy Consumption: %.2f kWh".format(dailyKwh))
                 Text("Monthly Energy Consumption: %.2f kWh".format(monthlyKwh))
                 Text("Estimated Monthly Bill: ₹%.2f".format(monthlyCost))
+                Text("Estimated Daily Cost: ₹%.2f".format(dailyCost))
                 Text("Estimated Carbon Footprint: %.2f kg CO₂".format(carbonEmission))
 
                 Spacer(modifier = Modifier.height(12.dp))
@@ -194,8 +205,13 @@ fun CalculatorScreen(navController: NavController) {
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary
                 )
-
                 Spacer(modifier = Modifier.height(10.dp))
+
+                Text(
+                    text = usageFeedback,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.primary
+                )
 
                 LinearProgressIndicator(
                     progress = { progressValue },
