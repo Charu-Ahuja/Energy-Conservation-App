@@ -1,4 +1,4 @@
-package com.example.energyconservationapp.data
+package com.example.energyapp.data
 
 data class TeamMember(
     val name: String,

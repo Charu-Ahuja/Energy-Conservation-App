@@ -22,6 +22,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EnergyApp(){
     val navController = rememberNavController()
@@ -81,7 +82,7 @@ sealed class Screen(val route: String, val title: String, val icon: androidx.com
 
     object Dashboard : Screen("dashboard", "Home", Icons.Default.Home)
     object Tips : Screen("tips", "Tips", Icons.Default.Lightbulb)
-    object Stats : Screen("stats", "Stats", Icons.Default.BarChart)
-    object Settings : Screen("settings", "Settings", Icons.Default.Settings)
-    object Profile : Screen("profile", "Profile", Icons.Default.Person)
+    object Calculator : Screen("calculator", "Calculator", Icons.Default.BarChart)
+    object Impact : Screen("impact", "Impact", Icons.Default.Settings)
+    object Quiz : Screen("quiz", "Quiz", Icons.Default.Person)
 }

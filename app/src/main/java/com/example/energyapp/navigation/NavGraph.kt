@@ -22,29 +22,24 @@ fun NavGraph(
         modifier = Modifier.padding(paddingValues)
     ) {
 
-        // 🏠 Dashboard (Home)
         composable(Screen.Dashboard.route) {
             DashboardScreen()
         }
 
-        // 💡 Energy Tips
+        composable(Screen.Calculator.route) {
+            CalculatorScreen(navController = navController)
+        }
+
         composable(Screen.Tips.route) {
-            CalculatorScreen()
+            TipsScreen(navController = navController)
         }
 
-        // 📊 Stats / Usage Tracking
-        composable(Screen.Stats.route) {
-            TipsScreen()
-        }
-
-        // ⚙️ Settings
-        composable(Screen.Settings.route) {
-            QuizScreen()
-        }
-
-        // 👤 Profile
-        composable(Screen.Profile.route) {
+        composable(Screen.Impact.route) {
             ImpactScreen()
+        }
+
+        composable(Screen.Quiz.route) {
+            QuizScreen()
         }
     }
 }

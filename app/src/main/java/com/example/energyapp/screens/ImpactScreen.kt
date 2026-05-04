@@ -1,4 +1,4 @@
-package com.example.energyconservationapp.screens
+package com.example.energyapp.screens
 
 import android.content.Context
 import android.content.Intent
@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.energyconservationapp.data.AboutData
+import com.example.energyapp.data.AboutData
 
 @Composable
 fun ImpactScreen() {
