@@ -1,22 +1,12 @@
-package com.example.energyapp.data
-
-data class TeamMember(
-    val name: String,
-    val rollNo: String,
-    val contribution: String
-)
+package com.example.energyconservationapp.data
 
 object AboutData {
-    // Automatically mapped from your team's work division
-    val teamMembers = listOf(
-        TeamMember("Medha Mohiley", "Roll No: 01", "Dashboard, Navigation & Final Integration"),
-        TeamMember("Kunjal Garg", "Roll No: 02", "Energy Consumption Calculator"),
-        TeamMember("Ayushna Bora", "Roll No: 03", "Energy Conservation Tips Hub"),
-        TeamMember("Charu Ahuja", "Roll No: 04", "Green Quiz & Badge System"),
-        TeamMember("Lovedeep Singh", "Roll No: 05", "Impact Page, About Us & Share Feature")
-    )
+    // App Information
+    val appName = "Energy Conservation App"
+    val appVersion = "Version 1.0"
+    val appDescription = "This application is designed to help university students track, manage, and reduce their daily energy consumption. By providing practical tips, calculating energy usage, and raising awareness about environmental impacts, we aim to build a more sustainable and eco-friendly campus community."
 
-    // Environmental impact statistics
+    // Environmental impact statistics (We keep this for the top part of your screen!)
     val impactStats = listOf(
         "Turning off unnecessary lights can save up to 400 kWh per year.",
         "Using LED bulbs reduces energy consumption by 75%.",
