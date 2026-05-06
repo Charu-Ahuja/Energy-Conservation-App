@@ -26,13 +26,6 @@ To ensure high maintainability and scalability, we followed a clean, modular pac
 *   `com.example.energyapp.ui.theme`: Centralized styling and centralized design tokens.
 *   `com.example.energyapp.navigation`: Manages the app's navigation flow and `NavGraph`.
 
-## 👥 The Team
-*   **Medha**: Project Lead, MainActivity, Navigation, and UI Branding
-*   **Charu**: Lead Engineer for Quiz Module, Architecture Refactoring, and Achievement Logic
-*   **Kunjal**: Energy Calculator and Utility functions
-*   **Ayushna**: Tips Hub and Educational Data curation
-*   **Lovedeep**: Impact Tracker and About Data integration
-
 ## 🏁 Getting Started
 1.  **Clone the Repository**:
     ```bash
