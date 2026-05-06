@@ -5,9 +5,8 @@
 Energy Saver is an Android application designed to empower users to reduce their carbon footprint through gamified learning and actionable insights. Our mission is to help users save money and protect the planet through an interactive and rewarding journey.
 
 ## 🚀 Key Features
+*   **Dashboard**:A high-performance main landing page with a modern UI and easy access to application logout.
 *   **Eco-Quiz Module**: An interactive, card-based quiz experience that tests sustainability knowledge with a modern UI.
-*   **Dynamic Achievement System**: A gamified rewards logic that evaluates performance to award custom badges like **'Eco Legend'** or **'Green Champion'**.
-*   **Contextual Education**: Provides immediate, real-time feedback and explanations for every quiz answer to deepen user awareness.
 *   **Energy Calculator**: Precision tools to identify power-hungry appliances and estimate potential savings.
 *   **Impact Tracker**: Visualizes the real-world difference made by the user's conservation efforts.
 *   **Tips Hub**: A repository of easy-to-follow, energy-efficient habits categorized for daily routine integration.
